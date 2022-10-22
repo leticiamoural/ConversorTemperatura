@@ -23,7 +23,6 @@ public class Temperatura {
         double[] temperaturasIniciais = new double[quantidadeTemperatura];
 
 
-
         switch(escolha) {
             case 1:
                 for (int i = 0; i < quantidadeTemperatura; i++) {
@@ -35,11 +34,10 @@ public class Temperatura {
                     temperaturasEscolhidasConvertidas.add(valorEmFahrenheit);
                     System.out.printf("O valor desta temperatura em Fahrenheit é %.2f\n", valorEmFahrenheit);
                 }
-                Double mediaInicial = calculaMediaTemperaturas(temperaturasEscolhidasIniciais);
-                Double mediaConvertida = calculaMediaTemperaturas(temperaturasEscolhidasConvertidas);
+
                 System.out.printf("\nA media das temperaturas iniciais é de: %.2f\n", calculaMediaTemperaturas(temperaturasEscolhidasIniciais));
                 System.out.printf("A media das temperaturas convertidas é de: %.2f\n", calculaMediaTemperaturas(temperaturasEscolhidasConvertidas));
-                break;//ja arrumei
+                break;
 
             case 2:
                 for (int i = 0; i < quantidadeTemperatura; i++) {
@@ -116,8 +114,6 @@ public class Temperatura {
 
     public void iniciarMenu() {
         Scanner input = new Scanner(System.in);
-        Scanner entradaUnidade = new Scanner(System.in);
-        Scanner saidaUnidade = new Scanner(System.in);
         System.out.println("________________________________________");
         System.out.println("# CONVERSOR DE TEMPERATURAS #");
         System.out.println("Insira a quantidade de temperaturas a serem convertidas:");
