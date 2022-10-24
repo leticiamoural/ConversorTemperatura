@@ -8,7 +8,7 @@ public class Temperatura {
     public static List<Double> temperaturasEscolhidasConvertidas = new ArrayList<>();
 
 
-    // SAO DUAS PRA CADA CONVERSAO
+    // SAO DUAS PRA CADA CONVERSÃO
     //1 - C > F
     //2 - K > F
     //3 - C > K
@@ -16,7 +16,7 @@ public class Temperatura {
     //5 - F > C
     //6 - K > C
 
-//NO MENU CAPTURAR QUANTIDADE DE TEMPERATURA E UNIDADEDEMEDIDA
+//NO MENU: CAPTURAR QUANTIDADE DE TEMPERATURA E UNIDADEDEMEDIDA
     public static void converteTodasAsTemperaturas(Integer quantidadeTemperatura, Integer escolha) {
         Scanner input = new Scanner(System.in);
 
@@ -66,7 +66,7 @@ public class Temperatura {
                 System.out.printf("\nA media das temperaturas iniciais é de: %.2f\n", calculaMediaTemperaturas(temperaturasEscolhidasIniciais));
                 System.out.printf("A media das temperaturas convertidas é de: %.2f\n", calculaMediaTemperaturas(temperaturasEscolhidasConvertidas));
                 break;
-//
+
             case 4:
                 for (int i = 0; i < quantidadeTemperatura; i++) {
                     System.out.print("Digite a temperatura #" + (i+1) + " : ");
@@ -111,29 +111,6 @@ public class Temperatura {
         }
     }
 
-
-    public void iniciarMenu() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("________________________________________");
-        System.out.println("# CONVERSOR DE TEMPERATURAS #");
-        System.out.println("Insira a quantidade de temperaturas a serem convertidas:");
-        Integer quantidadeTemperaturas = input.nextInt();
-
-
-        System.out.println("Agora selecione a operação que deseja realizar: ");
-        System.out.println(                     "1 - De CELSIUS para FAHRENHEIT\n" +
-                                                "2 - De KELVIN para FAHRENHEIT\n"  +
-                                                "3 - De CELSIUS para KELVIN\n" +
-                                                "4 - De FAHRENHEIT para KELVIN\n"  +
-                                                "5 - De FAHRENHEIT para CELSIUS\n" +
-                                                "6 - De KELVIN para CELSIUS");
-
-
-        Integer escolhaDaOperacao = input.nextInt();
-        converteTodasAsTemperaturas(quantidadeTemperaturas,escolhaDaOperacao);
-
-    }
-
     //recebe uma lista e retorna um double
     public static Double calculaMediaTemperaturas(List<Double> temperaturas) {
         Double media;
@@ -144,7 +121,6 @@ public class Temperatura {
         media = soma / temperaturas.size();
         return media;
     }
-
     private static double converteFahrenheitToKelvin(double Fahrenheit) {
         return ((Fahrenheit-32) * (5.0/9.0)) + 273.15;
     }
@@ -171,7 +147,4 @@ public class Temperatura {
 
         return (Celsius*(9.0/5.0)) + 32.0;
     }
-
-
-
 }
